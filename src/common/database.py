@@ -6,11 +6,13 @@ __author__ = 'jslvtr'
 
 class Database(object):
     URI = os.environ.get("MONGOLAB_URI")
+    print(URI)
     DATABASE = None
 
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
+        print(client)
         Database.DATABASE = client.get_default_database()
 
     @staticmethod
